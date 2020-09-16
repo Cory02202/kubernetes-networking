@@ -82,9 +82,9 @@ To test use the External-IP and the NodePort, e.g. 169.48.67.166:32333, and send
 ```
 $ PROXY_IP=169.48.67.166
 $ PORT_P=32333
-$ curl -L -X POST "http://$PROXY_IP:$PORT_P/proxy/api/messages" -H 'Content-Type: application/json' -H 'Content-Type: application/json' -d '{ "sender": "remko", "host": "helloworld-proxy:8080" }'
+$ curl -L -X POST "http://$PROXY_IP:$PORT_P/proxy/api/messages" -H 'Content-Type: application/json' -H 'Content-Type: application/json' -d '{ "sender": "osonoi", "host": "helloworld-proxy:8080" }'
 
-{"id":"3aa4f889-94a0-4be8-b8f2-8b59f8ad3de7","sender":"remko","message":"Hello remko (proxy)","host":"helloworld-proxy:8080"}
+{"id":"3aa4f889-94a0-4be8-b8f2-8b59f8ad3de7","sender":"remko","message":"Hello osonoi (proxy)","host":"helloworld-proxy:8080"}
 ```
 
 
@@ -113,10 +113,10 @@ networkpolicy.networking.k8s.io/helloworld-deny-all created
 
 Test the `helloworld` and the proxy,
 ```
-$ curl -L -X POST "http://169.48.67.163:31777/api/messages" -H 'Content-Type: application/json' -d '{ "sender": "remko" }'
+$ curl -L -X POST "http://$PUBLIC_IP:$PORT/api/messages" -H 'Content-Type: application/json' -d '{ "sender": "osonoi" }'
 curl: (7) Failed to connect to 169.48.67.163 port 31777: Connection timed out
 
-$ curl -L -X POST "http://$PROXY_IP:$PORT_P/proxy/api/messages" -H 'Content-Type: application/json' -H 'Content-Type: application/json' -d '{ "sender": "remko", "host": "helloworld-proxy:8080" }'
+$ curl -L -X POST "http://$PROXY_IP:$PORT_P/proxy/api/messages" -H 'Content-Type: application/json' -H 'Content-Type: application/json' -d '{ "sender": "osonoi", "host": "helloworld-proxy:8080" }'
 curl: (7) Failed to connect to 169.48.67.166 port 32333: Connection timed out
 ```
 
@@ -164,11 +164,11 @@ networkpolicy.networking.k8s.io/helloworld-allow-to-label created
 
 Test the `helloworld` and the proxy,
 ```
-$ curl -L -X POST "http://169.48.67.163:31777/api/messages" -H 'Content-Type: application/json' -d '{ "sender": "remko" }'
+$ curl -L -X POST "http://$PUBLIC_IP:$PORT/api/messages" -H 'Content-Type: application/json' -d '{ "sender": "osonoi" }'
 
 curl: (7) Failed to connect to 169.48.67.163 port 31777: Connection timed out
 
-$ curl -L -X POST "http://169.48.67.166:32333/proxy/api/messages" -H 'Content-Type: application/json' -d '{ "sender": "remko", "host": "helloworld:8080" }'
+$ curl -L -X POST "http://$PROXY_IP:$PORT_P/proxy/api/messages" -H 'Content-Type: application/json' -H 'Content-Type: application/json' -d '{ "sender": "osonoi", "host": "helloworld-proxy:8080" }'
 
 curl: (7) Failed to connect to 169.48.67.166 port 32333: Connection timed out
 ```
