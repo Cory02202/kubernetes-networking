@@ -90,8 +90,8 @@ Now to access the NLB for the Service of the `helloworld` from the internet, you
 Access the `helloworld` app in a browser or with Curl,
 ```
 $ PUBLIC_IP=169.48.67.163
-$ curl -L -X POST "http://$PUBLIC_IP:$PORT/api/messages" -H 'Content-Type: application/json' -d '{ "sender": "remko" }'
-{"id":"f979a034-bada-41cb-8c67-fb5fd36d0db3","sender":"remko","message":"Hello remko (direct)","host":null}
+$ curl -L -X POST "http://$PUBLIC_IP:$PORT/api/messages" -H 'Content-Type: application/json' -d '{ "sender": "osonoi" }'
+{"id":"f979a034-bada-41cb-8c67-fb5fd36d0db3","sender":"remko","message":"Hello osonoi (direct)","host":null}
 ```
 
 The TCP/UDP Network Load Balancer (NLB) 1.0 that was created with ServiceType `LoadBalancer`, uses Iptables, a Linux kernel feature to load balance requests across an app's pods. The image below shows the traffic flow for a single-zone cluster using an NLB v1.0.
