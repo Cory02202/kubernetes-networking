@@ -80,7 +80,9 @@ helloworld-proxy    LoadBalancer    172.21.78.158    169.48.67.166    8080:32333
 To test use the External-IP and the NodePort, e.g. 169.48.67.166:32333, and send the proxy the Kubernetes service name and target port,
 
 ```
-$ curl -L -X POST "http://169.48.67.166:32333/proxy/api/messages" -H 'Content-Type: application/json' -H 'Content-Type: application/json' -d '{ "sender": "remko", "host": "helloworld-proxy:8080" }'
+$ PROXY_IP=169.48.67.166
+$ PORT_P=32333
+$ curl -L -X POST "http://$PROXY_IP:$PORT_P/proxy/api/messages" -H 'Content-Type: application/json' -H 'Content-Type: application/json' -d '{ "sender": "remko", "host": "helloworld-proxy:8080" }'
 
 {"id":"3aa4f889-94a0-4be8-b8f2-8b59f8ad3de7","sender":"remko","message":"Hello remko (proxy)","host":"helloworld-proxy:8080"}
 ```
