@@ -89,7 +89,7 @@ Now to access the NLB for the Service of the `helloworld` from the internet, you
 
 Access the `helloworld` app in a browser or with Curl,
 ```
-$ PUBLIC_ID=169.48.67.163
+$ PUBLIC_IP=169.48.67.163
 $ curl -L -X POST "http://$PUBLIC_IP:$PORT/api/messages" -H 'Content-Type: application/json' -d '{ "sender": "remko" }'
 {"id":"f979a034-bada-41cb-8c67-fb5fd36d0db3","sender":"remko","message":"Hello remko (direct)","host":null}
 ```
