@@ -96,8 +96,8 @@ $ PORT=31777
 
 Test the deployment,
 ```
-$ curl -L -X POST "http://$PUBLIC_IP:$PORT/api/messages" -H 'Content-Type: application/json' -H 'Content-Type: text/plain' -d '{ "sender": "remko" }'
-{"id":"f979a034-bada-41cb-8c67-fb5fd36d0db3","sender":"remko","message":"Hello remko (direct)","host":null}
+$ curl -L -X POST "http://$PUBLIC_IP:$PORT/api/messages" -H 'Content-Type: application/json' -H 'Content-Type: text/plain' -d '{ "sender": "osonoi" }'
+{"id":"f979a034-bada-41cb-8c67-fb5fd36d0db3","sender":"remko","message":"Hello osonoi (direct)","host":null}
 ```
 
 
