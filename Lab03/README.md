@@ -105,7 +105,7 @@ The TCP/UDP Network Load Balancer (NLB) 1.0 that was created with ServiceType `L
 If you would create not 1 but 5 services of type `LoadBalancer`, an error will occur trying to `sync load balancer` and `ensure load balancer` for the fifth load balancer, because no cloud provider IPs are available anymore after 4 IPs were used for the first 4 load balancers,
 
 ```
-% kubectl describe svc helloworld5  
+% kubectl describe svc helloworld
 ...
 Events:
   Type    Reason    Age    From    Message
