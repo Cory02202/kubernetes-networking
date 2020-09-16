@@ -1,6 +1,8 @@
 # Setup
-
-If you participate in an IBM managed workshop, you can access a cluster for the workshop via your IBM Cloud account and IBM Id. Instructions are found [here](https://github.com/remkohdev/kube101/tree/master/Lab0).
+Please login to IBM Cloud
+Create Standard kubernetes cluster.
+Please reffer to this page for detailed information. https://cloud.ibm.com/docs/containers?topic=containers-cs_ov#cluster_types
+In this lab, you can use single zone, 2 vCPU 4GB, 1 worker node(pool)
 
 I recommended using the IBM Cloud shell with tools pre-installed to run the labs at https://shell.cloud.ibm.com.
 
@@ -12,6 +14,7 @@ I recommended using the IBM Cloud shell with tools pre-installed to run the labs
     ```
 
 2. Log in to your cluster, e.g. if created in the `us-south` region,
+(If you are using IBM CLoud shell, you don't have to login)
 
     ```
     $ ibmcloud login -a cloud.ibm.com -r us-south
@@ -22,7 +25,7 @@ I recommended using the IBM Cloud shell with tools pre-installed to run the labs
 
 ![Login to IBM Cloud](../images/shell-login-to-cloud.png)
 
-1. Download the cluster configuration to the client,
+1. Download the cluster configuration to the client
 
     ```
     $ CLUSTER_NAME=<clustername>
