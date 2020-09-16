@@ -231,9 +231,9 @@ Try to access the `helloworld` API and the proxy using the Ingress Subdomain wit
 ```
 $ HOST=remkohdev-iks116-294603-2bef1f4b4097001da9502000c44fc2b2-0000.us-south.containers.appdomain.cloud
 
-$ curl -L -X POST "http://$HOST/hello/api/messages" -H 'Content-Type: application/json' -d '{ "sender": "remko" }'
+$ curl -L -X POST "http://$HOST/hello/api/messages" -H 'Content-Type: application/json' -d '{ "sender": "osonoi" }'
 
-{"id":"e6368609-3c64-46ba-98d4-5e84b22a5539","sender":"remko","message":"Hello remko (direct)","host":null}
+{"id":"e6368609-3c64-46ba-98d4-5e84b22a5539","sender":"remko","message":"Hello osonoi (direct)","host":null}
 ```
 
 If you instead want to use subdomain paths instead of URI paths, 
