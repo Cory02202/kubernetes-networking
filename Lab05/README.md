@@ -116,7 +116,7 @@ Test the `helloworld` and the proxy,
 $ curl -L -X POST "http://169.48.67.163:31777/api/messages" -H 'Content-Type: application/json' -d '{ "sender": "remko" }'
 curl: (7) Failed to connect to 169.48.67.163 port 31777: Connection timed out
 
-$ curl -L -X POST "http://169.48.67.166:32333/proxy/api/messages" -H 'Content-Type: application/json' -H 'Content-Type: application/json' -d '{ "sender": "remko", "host": "helloworld:8080" }'
+$ curl -L -X POST "http://$PROXY_IP:$PORT_P/proxy/api/messages" -H 'Content-Type: application/json' -H 'Content-Type: application/json' -d '{ "sender": "remko", "host": "helloworld-proxy:8080" }'
 curl: (7) Failed to connect to 169.48.67.166 port 32333: Connection timed out
 ```
 
